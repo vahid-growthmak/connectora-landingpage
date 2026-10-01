@@ -19,4 +19,4 @@
 ## Company
 
 - Built by [Growthmak](https://growthmak.com/). Contact: info@growthmak.com
-- Pricing is shared on a demo call: /book-a-demo
+- Pricing is shared on a demo call, and booking a demo includes a 7-day free trial: /book-a-demo

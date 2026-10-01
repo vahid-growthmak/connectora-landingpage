@@ -24,6 +24,7 @@ Cal.config.forwardQueryParams = true;
 
 const faqs = [
   { q: 'Is the demo free?', a: 'Yes. The demo is free and there is no obligation.' },
+  { q: 'Is there a free trial?', a: 'Yes. Booking a demo gets you a 7-day free trial of Connectora.' },
   { q: 'Do I need to connect my LinkedIn account before the demo?', a: 'No. We show Connectora on a sample campaign. You connect your own accounts only if you decide to go ahead.' },
   { q: "Can I see Connectora's pricing without a call?", a: 'Not yet. Pricing depends on your setup, so we share it on the demo.' },
 ];
@@ -48,14 +49,14 @@ export default {
         <h1 class="t-display-sm split-lines mt-5">Book a <span class="serif">Connectora demo</span></h1>
       </div>
       <div data-reveal style="--reveal-delay:120ms">
-        <p class="lead" style="margin-top:0">See your next LinkedIn campaign planned out, paced safely across your accounts, with replies flowing into one inbox. We'll share pricing for your setup on the call.</p>
+        <p class="lead" style="margin-top:0">See your next LinkedIn campaign planned out, paced safely across your accounts, with replies flowing into one inbox. We'll share pricing for your setup on the call, and you get a 7-day free trial.</p>
       </div>
     </div>
 
     <div class="cal-card" data-reveal style="--reveal-delay:180ms">
       <div class="cal-card-head">
         <span class="flex items-center gap-3"><span class="icon-tile" style="width:2.25rem;height:2.25rem">${icon('calendar', 18)}</span><span><strong>Pick a time</strong> · ${config.demoLength}, video call with the Growthmak team</span></span>
-        <span class="flex items-center gap-3"><span class="check-dot soft" aria-hidden="true">${tick(12)}</span>No obligation. We use your details only to arrange and prepare your demo.</span>
+        <span class="flex items-center gap-3"><span class="check-dot soft" aria-hidden="true">${tick(12)}</span>7-day free trial included. No obligation. We use your details only to arrange and prepare your demo.</span>
       </div>
       <div style="width:100%;height:100%;overflow:auto" id="my-cal-inline-${namespace}" data-lenis-prevent></div>
       <noscript><p class="cal-fallback">The booking calendar needs JavaScript. <a href="https://cal.com/${link}">Open the booking page on Cal.com</a>.</p></noscript>
@@ -133,6 +134,7 @@ ${faqSection(faqs, { after: `<a class="btn btn-primary group" href="#my-cal-inli
         mainEntity: [
           { '@type': 'Question', name: 'How much does Connectora cost?', acceptedAnswer: { '@type': 'Answer', text: "Connectora's pricing is shared on the demo call rather than published. The team first understands how many LinkedIn accounts you plan to run and how much setup help you want, then recommends a setup and quotes for it." } },
           { '@type': 'Question', name: 'Is the Connectora demo free?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. The demo is free and there is no obligation.' } },
+          { '@type': 'Question', name: 'Does Connectora have a free trial?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Booking a demo gets you a 7-day free trial of Connectora.' } },
           { '@type': 'Question', name: 'Do I need to connect my LinkedIn account before a Connectora demo?', acceptedAnswer: { '@type': 'Answer', text: 'No. Connectora is shown on a sample campaign. You connect your own accounts only if you decide to go ahead.' } },
         ],
       },

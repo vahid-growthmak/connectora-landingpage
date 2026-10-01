@@ -105,6 +105,7 @@ ${stickySection({
       </div>
       <ul class="cta-list" data-reveal style="--reveal-delay:120ms">
         <li><span class="check-dot" aria-hidden="true">${icon('calendar', 13)}</span><span>Book a demo: <a class="ul-link" href="/book-a-demo" style="color:#fff">/book-a-demo</a></span></li>
+        <li><span class="check-dot" aria-hidden="true">${tick(13)}</span><span>7-day free trial when you book a demo</span></li>
         <li><span class="check-dot" aria-hidden="true">${icon('mail', 13)}</span><span>Email: <a class="ul-link" href="mailto:${config.org.email}" style="color:#fff">${config.org.email}</a></span></li>
       </ul>
     </div>

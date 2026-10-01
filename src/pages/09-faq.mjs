@@ -57,9 +57,8 @@ const GROUPS = [
     more: ['/book-a-demo', 'Book a demo'],
     items: [
       { q: 'How much does Connectora cost?', a: 'Pricing is shared on a short demo call, once we understand how many LinkedIn accounts you run and the level of support you need. There are no published plans yet.' },
-      // TODO: confirm the free-trial answer matches what sales will offer.
-      { q: 'Is there a free trial?', a: 'We start with a guided demo using your own targets, so you can see the plan, pacing and inbox before committing. Ask on the call about trial options for your team.' },
-      { q: 'How do I get started?', a: 'Book a demo. We review your accounts and targets, show you Connectora on a sample campaign, and agree a setup and price that fit.' },
+      { q: 'Is there a free trial?', a: 'Yes. Connectora comes with a 7-day free trial. Book a short demo to get access, so you can see the plan, pacing and inbox on your own campaigns before committing.' },
+      { q: 'How do I get started?', a: 'Book a demo. We review your accounts and targets, show you Connectora on a sample campaign, start your 7-day free trial, and agree a setup and price that fit.' },
     ],
   },
 ];

@@ -4,6 +4,7 @@ import { heroDashboard, uniboxMock, leadValidationMock, miniPlan, miniReplyCheck
 
 const faqs = [
   { q: 'How much does Connectora cost?', a: 'Pricing is shared on a short demo call, once we understand how many LinkedIn accounts you run and the support you need. <a href="/book-a-demo">Book a demo</a>.' },
+  { q: 'Is there a free trial?', a: 'Yes. Connectora comes with a 7-day free trial. <a href="/book-a-demo">Book a short demo</a> to get access.' },
   { q: 'Do I need to keep my computer on?', a: 'No. Connectora runs in the cloud. There is no browser extension, and campaigns keep running when your laptop is closed.' },
   { q: 'Does Connectora store my LinkedIn password?', a: 'No. You connect each account on a secure hosted sign-in page. Connectora never sees or stores your LinkedIn password or cookies.' },
   { q: 'Can one campaign send from several LinkedIn accounts?', a: "Yes. Pick any number of connected accounts as senders. Connectora spreads leads across them in proportion to each account's remaining daily allowance." },
@@ -47,6 +48,7 @@ export default {
           <li><span class="check-dot soft" aria-hidden="true">${tick(12)}</span>Runs in the cloud, no browser extension</li>
           <li><span class="check-dot soft" aria-hidden="true">${tick(12)}</span>You never share your LinkedIn password</li>
           <li><span class="check-dot soft" aria-hidden="true">${tick(12)}</span>Every AI reply is approved by a human</li>
+          <li><span class="check-dot soft" aria-hidden="true">${tick(12)}</span>7-day free trial</li>
         </ul>
       </div>
     </div>
@@ -290,6 +292,7 @@ ${closingCta({
         '@type': 'FAQPage',
         mainEntity: [
           { '@type': 'Question', name: 'How much does Connectora cost?', acceptedAnswer: { '@type': 'Answer', text: 'Pricing is shared on a short demo call, once the Connectora team understands how many LinkedIn accounts you run and the support you need.' } },
+          { '@type': 'Question', name: 'Does Connectora have a free trial?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Connectora comes with a 7-day free trial. Book a short demo to get access.' } },
           { '@type': 'Question', name: 'Do I need to keep my computer on for Connectora to work?', acceptedAnswer: { '@type': 'Answer', text: 'No. Connectora runs in the cloud. There is no browser extension, and campaigns keep running when your computer is off.' } },
           { '@type': 'Question', name: 'Does Connectora store my LinkedIn password?', acceptedAnswer: { '@type': 'Answer', text: 'No. Each LinkedIn account is connected on a secure hosted sign-in page. Connectora never sees or stores your LinkedIn password or cookies.' } },
           { '@type': 'Question', name: 'Can one Connectora campaign send from several LinkedIn accounts?', acceptedAnswer: { '@type': 'Answer', text: "Yes. You can select any number of connected LinkedIn accounts as senders. Connectora spreads leads across them in proportion to each account's remaining daily allowance." } },

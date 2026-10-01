@@ -5,7 +5,7 @@ const TOOLS = ['Connectora', 'HeyReach', 'Expandi', 'Waalaxy', 'Dripify'];
 const ROWS = [
   ['Pricing model', 'Shared on a demo call', 'Per sender, or flat agency plans', 'Per seat', 'Per user', 'Per user'],
   ['Listed entry price', 'On request', '$79 per sender per month (Growth, monthly)', '$99 per month ($79 billed annually)', 'From €19 per user per month (Pro)', '$59 per user per month ($39 billed annually)'],
-  ['Free trial', 'Guided demo', '14 days, no card', '7 days', '14 days', '7 days, no card'],
+  ['Free trial', '7 days, starts with a short demo', '14 days, no card', '7 days', '14 days', '7 days, no card'],
   ['Runs in the cloud', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes'],
   ['Shared inbox', 'Yes, Unibox (included)', 'Yes, Unified Inbox', 'Yes, Global Inbox', 'Paid add-on (LinkedIn Inbox)', 'Yes, from Pro plan'],
   ['Email outreach', 'No, LinkedIn-focused', 'Through Instantly and Smartlead integrations', 'Yes, email follow-ups', 'Yes, on Business plan', 'Yes'],

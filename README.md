@@ -41,7 +41,6 @@ The build also generates `sitemap.xml`, `robots.txt` (with the AI crawlers allow
 - [ ] Set `author` in `site.config.mjs` for the Safety and Compare articles.
 - [ ] Confirm `org.city` (Bengaluru) and add `legalName` to the About schema once the legal entity is confirmed.
 - [ ] Add client quotes to `clientQuotes` (written permission only). Until then the quote area is hidden.
-- [ ] Cal.com event: its description says "You'll get the 7-day free trial of this product", but the site says the trial is a guided demo (FAQ, Compare table). Align one or the other.
 - [ ] Cal.com event: add the suggested booking questions from the brief (accounts, targets, current tool).
 - [ ] Unibox FAQ: confirm company context and tone rules are set up per client during onboarding, then extend the answer (TODO in `src/pages/05-unibox.mjs`).
 - [ ] Use cases FAQ: confirm "no fixed limit on connected accounts" fits your plans.

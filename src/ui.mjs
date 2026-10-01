@@ -263,6 +263,7 @@ export const pageHero = ({ crumb, kicker, h1, lead = '', ctas = '', below = '', 
 
 /* ---------------- Closing CTA ---------------- */
 const trustItems = [
+  '7-day free trial when you book a demo',
   'Runs in the cloud, no browser extension',
   'You never share your LinkedIn password',
   'Every AI reply is approved by a human',
