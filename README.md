@@ -18,7 +18,7 @@ Requires Node 18+. No `npm install` needed.
 SITE_URL=https://your-domain.com npm run build
 ```
 
-Deploy the `dist/` folder to any static host (Vercel, Netlify, Cloudflare Pages, S3). Pages are written as `features.html` and so on, and served at clean URLs (`/features`). `vercel.json` handles this on Vercel; Netlify and Cloudflare Pages do it by default.
+Deploy the `dist/` folder to any static host (Vercel, Netlify, Cloudflare Pages, S3). Pages are written as `features.html` and so on, and served at clean URLs (`/features`). On Vercel, the root `vercel.json` sets the build command (`node build.mjs`), the output folder (`dist`) and clean URLs, so leave the Vercel project settings on their defaults. Netlify and Cloudflare Pages: build command `node build.mjs`, output folder `dist`.
 
 > If `SITE_URL` is not set, every page is built `noindex` and `robots.txt` blocks crawling. This stops an unconfigured preview from ever being indexed.
 

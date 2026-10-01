@@ -88,8 +88,7 @@ ${indexed.map((p) => `- [${p.llmsTitle || p.title}](${SITE}${p.slug}): ${p.descr
 `;
 fs.writeFileSync(path.join(dist, 'llms.txt'), llms);
 
-/* host config: clean URLs without .html, long cache for versioned assets */
-fs.writeFileSync(path.join(dist, 'vercel.json'), JSON.stringify({ cleanUrls: true, trailingSlash: false }, null, 2));
+/* Netlify / Cloudflare Pages cache headers (Vercel uses the root vercel.json instead) */
 fs.writeFileSync(path.join(dist, '_headers'), `/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n`);
 
 if (!SITE) {
