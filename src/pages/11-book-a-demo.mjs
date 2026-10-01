@@ -1,5 +1,6 @@
 import config from '../../site.config.mjs';
-import { secHead, blockSection, stickySection, table, faqSection, breadcrumbNav, icon, tick, featureList } from '../ui.mjs';
+import { secHead, blockSection, stickySection, table, faqSection, breadcrumbNav, icon, tick, featureList, directAccess, waLink } from '../ui.mjs';
+import { PLANS } from '../pricing.mjs';
 
 const { namespace, link } = config.cal;
 
@@ -26,16 +27,17 @@ const faqs = [
   { q: 'Is the demo free?', a: 'Yes. The demo is free and there is no obligation.' },
   { q: 'Is there a free trial?', a: 'Yes. Booking a demo gets you a 7-day free trial of Connectora.' },
   { q: 'Do I need to connect my LinkedIn account before the demo?', a: 'No. We show Connectora on a sample campaign. You connect your own accounts only if you decide to go ahead.' },
-  { q: "Can I see Connectora's pricing without a call?", a: 'Not yet. Pricing depends on your setup, so we share it on the demo.' },
+  { q: "Can I see Connectora's pricing without a call?", a: 'Yes. Every plan and per-account price is on the <a href="/pricing">pricing page</a>.' },
+  { q: 'Can I get access without a demo?', a: `Yes. If you want direct access, want to try it without a demo, or want to start as soon as possible, <a href="${waLink()}" target="_blank" rel="noopener">message ${config.directContact.name} on WhatsApp</a> (${config.directContact.phoneDisplay}).` },
 ];
 
 export default {
   slug: '/book-a-demo',
   file: 'book-a-demo.html',
   nav: 'demo',
-  title: 'Book a Connectora Demo: LinkedIn Outreach and Pricing',
-  llmsTitle: 'Book a demo (pricing)',
-  description: 'See Connectora on your own LinkedIn targets: a safe sending plan for your accounts, the Unibox and AI replies, plus pricing for your setup. Book a demo.',
+  title: 'Book a Connectora Demo: See LinkedIn Outreach Live',
+  llmsTitle: 'Book a demo',
+  description: 'See Connectora on your own LinkedIn targets: a safe sending plan for your accounts, the Unibox and AI replies, and the right plan for your team.',
   head: '<link rel="preconnect" href="https://app.cal.com" crossorigin>',
   scripts: calScript,
 
@@ -49,7 +51,8 @@ export default {
         <h1 class="t-display-sm split-lines mt-5">Book a <span class="serif">Connectora demo</span></h1>
       </div>
       <div data-reveal style="--reveal-delay:120ms">
-        <p class="lead" style="margin-top:0">See your next LinkedIn campaign planned out, paced safely across your accounts, with replies flowing into one inbox. We'll share pricing for your setup on the call, and you get a 7-day free trial.</p>
+        <p class="lead" style="margin-top:0">See your next LinkedIn campaign planned out, paced safely across your accounts, with replies flowing into one inbox. Plans start at $24 per LinkedIn account a month, and we'll help you pick the right one. You also get a 7-day free trial.</p>
+        <a class="direct-inline light group" href="${waLink()}" target="_blank" rel="noopener" data-cta="whatsapp_hero"><span class="direct-photo sm"><img src="${config.directContact.photo}" alt="" width="80" height="80"></span><span>Don't need a demo? <strong>Get direct access on WhatsApp</strong></span>${'<svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true" class="arrow" width="15" height="15"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>'}</a>
       </div>
     </div>
 
@@ -61,13 +64,14 @@ export default {
       <div style="width:100%;height:100%;overflow:auto" id="my-cal-inline-${namespace}" data-lenis-prevent></div>
       <noscript><p class="cal-fallback">The booking calendar needs JavaScript. <a href="https://cal.com/${link}">Open the booking page on Cal.com</a>.</p></noscript>
     </div>
-    <p class="mt-5 text-center text-muted" style="font-size:.92rem">Comparing tools? <a class="inline-link" href="/compare">See our honest comparison</a>.</p>
+    <div class="mt-8" id="direct-access">${directAccess({ heading: 'Prefer to skip the demo? Get direct access.' })}</div>
+    <p class="mt-5 text-center text-muted" style="font-size:.92rem">Plans and prices: <a class="inline-link" href="/pricing">Pricing</a>. Comparing tools? <a class="inline-link" href="/compare">See our honest comparison</a>.</p>
   </div>
 </section>
 
 ${blockSection({
   id: 'what-happens-on-a-demo',
-  head: secHead({ kicker: 'The call', h2: 'What happens on a <span class="serif">Connectora demo?</span>', answer: '<strong>A Connectora demo is a short video call with the Growthmak team. We learn your targets and how many LinkedIn accounts you run, walk through Connectora on a sample campaign, propose a safe daily sending pace for your accounts, and share pricing for your setup. You leave with a clear plan whether or not you buy.</strong>' }),
+  head: secHead({ kicker: 'The call', h2: 'What happens on a <span class="serif">Connectora demo?</span>', answer: '<strong>A Connectora demo is a short video call with the Growthmak team. We learn your targets and how many LinkedIn accounts you run, walk through Connectora on a sample campaign, propose a safe daily sending pace for your accounts, and recommend the plan that fits. You leave with a clear plan whether or not you buy.</strong>' }),
   content: table({
     label: 'Agenda of a Connectora demo',
     head: ['Part', 'What we cover'],
@@ -76,7 +80,7 @@ ${blockSection({
       ['2. Live walkthrough', 'Lead upload or <a class="inline-link" href="/linkedin-lead-sourcing#sales-navigator">Sales Navigator search</a>, sequence, schedule, plan-ahead queue'],
       ['3. Safety plan', 'A realistic daily pace per account, warm-up needs, invitation clean-up (<a class="inline-link" href="/linkedin-account-safety">safe daily sending pace</a>)'],
       ['4. Inbox and replies', '<a class="inline-link" href="/unibox">Unibox, Hold &amp; Resume, AI drafts</a>, CRM webhook'],
-      ['5. Pricing and next steps', 'Pricing for your setup and how onboarding works'],
+      ['5. Plan and next steps', 'The right plan for your number of accounts, and how onboarding works'],
     ],
   }) + `<p class="mt-5 text-muted">Length: <strong style="color:var(--fg)">${config.demoLength}</strong></p>`,
 })}
@@ -86,7 +90,8 @@ ${blockSection({
     <div class="m-mid mx-auto text-center" data-reveal>
       <span class="kicker">Pricing</span>
       <h2 class="t-h2 mt-5">How much does <span class="serif">Connectora cost?</span></h2>
-      <p class="answer mt-6"><strong>Connectora's pricing is shared on the demo call rather than published. We first understand how many LinkedIn accounts you plan to run and how much setup help you want, then recommend a setup and quote for it. There is no obligation to buy after the demo.</strong></p>
+      <p class="answer mt-6"><strong>Connectora costs $24 per LinkedIn sender account per month for 1 to 2 accounts, $21 for 3 to 10, $18 for 11 to 50 and $15 for 51 or more, with lower prices on annual billing. Every plan includes every feature. On the demo we help you choose the right plan; there is no obligation to buy.</strong></p>
+      <p class="mt-6 t-lead">Full details: <a class="inline-link" href="/pricing">Pricing</a>.</p>
     </div>
   </div>
 </section>
@@ -123,8 +128,8 @@ ${faqSection(faqs, { after: `<a class="btn btn-primary group" href="#my-cal-inli
         '@type': 'ContactPage',
         '@id': '{{SITE_URL}}/book-a-demo#webpage',
         url: '{{SITE_URL}}/book-a-demo',
-        name: 'Book a Connectora Demo: LinkedIn Outreach and Pricing',
-        description: 'Book a demo to see Connectora on your own LinkedIn targets, get a safe sending plan for your accounts, and receive pricing for your setup.',
+        name: 'Book a Connectora Demo: See LinkedIn Outreach Live',
+        description: 'Book a demo to see Connectora on your own LinkedIn targets, get a safe sending plan for your accounts, and choose the right plan.',
         isPartOf: { '@id': '{{SITE_URL}}/#website' },
         about: { '@id': '{{SITE_URL}}/#connectora' },
         potentialAction: { '@type': 'ReserveAction', name: 'Book a Connectora demo', target: '{{SITE_URL}}/book-a-demo' },
@@ -132,7 +137,8 @@ ${faqSection(faqs, { after: `<a class="btn btn-primary group" href="#my-cal-inli
       {
         '@type': 'FAQPage',
         mainEntity: [
-          { '@type': 'Question', name: 'How much does Connectora cost?', acceptedAnswer: { '@type': 'Answer', text: "Connectora's pricing is shared on the demo call rather than published. The team first understands how many LinkedIn accounts you plan to run and how much setup help you want, then recommends a setup and quotes for it." } },
+          { '@type': 'Question', name: 'How much does Connectora cost?', acceptedAnswer: { '@type': 'Answer', text: 'Connectora costs $24 per LinkedIn sender account per month for 1 to 2 accounts, $21 for 3 to 10, $18 for 11 to 50 and $15 for 51 or more, with lower prices on annual billing. Every plan includes every feature.' } },
+          { '@type': 'Question', name: 'Can I get access to Connectora without a demo?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. For direct access without a demo, message the Connectora team on WhatsApp.' } },
           { '@type': 'Question', name: 'Is the Connectora demo free?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. The demo is free and there is no obligation.' } },
           { '@type': 'Question', name: 'Does Connectora have a free trial?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Booking a demo gets you a 7-day free trial of Connectora.' } },
           { '@type': 'Question', name: 'Do I need to connect my LinkedIn account before a Connectora demo?', acceptedAnswer: { '@type': 'Answer', text: 'No. Connectora is shown on a sample campaign. You connect your own accounts only if you decide to go ahead.' } },

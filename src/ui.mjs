@@ -214,7 +214,8 @@ export const schemaAuthor = () =>
     ? {
         '@type': 'Person',
         name: config.author.name,
-        ...(config.author.role ? { jobTitle: config.author.role } : {}),
+        ...(config.author.role ? { jobTitle: `${config.author.role}, Growthmak` } : {}),
+        url: config.author.linkedin || undefined,
         ...(config.author.linkedin ? { sameAs: [config.author.linkedin] } : {}),
         worksFor: { '@id': '{{SITE_URL}}/#growthmak' },
       }
@@ -243,7 +244,9 @@ export const breadcrumbNav = (label) => `
 
 export const byline = (extra = '') => {
   const a = config.author;
-  const who = a.name ? `By ${a.linkedin ? `<a class="ul-link" href="${a.linkedin}" rel="author">${a.name}</a>` : a.name}${a.role ? `, ${a.role}` : ''}, Growthmak` : 'By the Growthmak team';
+  const who = a.name
+    ? `By ${a.linkedin ? `<a class="ul-link" href="${a.linkedin}" rel="author noopener" target="_blank" style="color:var(--fg);font-weight:600">${a.name}</a>` : `<strong>${a.name}</strong>`} (${a.role ? `${a.role}, ` : ''}Growthmak)`
+    : 'By the Growthmak team';
   return `<p class="byline"><span class="avatar" aria-hidden="true">${icon('user', 16)}</span><span>${who}</span><span aria-hidden="true">·</span><span>${extra}</span></p>`;
 };
 
@@ -261,13 +264,46 @@ export const pageHero = ({ crumb, kicker, h1, lead = '', ctas = '', below = '', 
   </div>
 </section>`;
 
+/* ---------------- Direct access (WhatsApp) ---------------- */
+const DC = config.directContact;
+export const waLink = () => `https://wa.me/${DC.whatsapp}?text=${encodeURIComponent(DC.message)}`;
+export const waIcon = (size = 18) =>
+  `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41Z"/></svg>`;
+
+// Full card: photo, name, why to message, WhatsApp button.
+export const directAccess = ({ dark = false, heading = 'Want to try Connectora without a demo?' } = {}) => `
+<div class="direct-card${dark ? ' is-dark' : ''}" data-reveal>
+  <div class="direct-who">
+    <span class="direct-photo"><img src="${DC.photo}" alt="${DC.name}" width="160" height="160" loading="lazy" decoding="async"></span>
+    <span class="direct-online" aria-hidden="true"></span>
+  </div>
+  <div class="direct-body">
+    <p class="overline">Skip the demo · Direct access</p>
+    <h3>${heading}</h3>
+    <p>If you want direct access, want to try it without a demo, or want to start as soon as possible, message <strong>${DC.name}</strong> on WhatsApp.</p>
+    <p class="direct-name"><strong>${DC.name}</strong>${DC.title ? ` · ${DC.title}` : ''}</p>
+    <div class="cta-stack mt-5">
+      <a class="btn btn-whatsapp group" href="${waLink()}" target="_blank" rel="noopener" data-cta="whatsapp_direct">${waIcon(18)}Message on WhatsApp${arrow()}</a>
+      <a class="direct-phone ul-link" href="${waLink()}" target="_blank" rel="noopener">${DC.phoneDisplay}</a>
+    </div>
+  </div>
+</div>`;
+
+// One-line version for the dark closing CTA band on every page.
+export const directInline = () => `
+<a class="direct-inline group" href="${waLink()}" target="_blank" rel="noopener" data-cta="whatsapp_inline">
+  <span class="direct-photo sm"><img src="${DC.photo}" alt="" width="80" height="80" loading="lazy" decoding="async"></span>
+  <span>Want access without a demo? <strong>WhatsApp ${DC.name.split(' ')[0]}</strong> at ${DC.phoneDisplay}</span>
+  ${arrow(15)}
+</a>`;
+
 /* ---------------- Closing CTA ---------------- */
 const trustItems = [
   '7-day free trial when you book a demo',
   'Runs in the cloud, no browser extension',
   'You never share your LinkedIn password',
   'Every AI reply is approved by a human',
-  'Pricing is shared on a short demo call',
+  'From $15 per LinkedIn account a month, every feature included',
 ];
 export const closingCta = ({ heading, body = '', button = 'Book a demo', secondary = null, list = trustItems, kicker = 'Book a demo' }) => `
 <section class="dark-band cta-band section" id="book">
@@ -281,6 +317,7 @@ export const closingCta = ({ heading, body = '', button = 'Book a demo', seconda
           ${btn({ href: '/book-a-demo', label: button, variant: 'primary', magnetic: true, cta: 'closing_cta' })}
           ${secondary ? btn({ href: secondary.href, label: secondary.label, variant: 'ghost-d' }) : ''}
         </div>
+        ${directInline()}
       </div>
       <ul class="cta-list" data-reveal style="--reveal-delay:120ms">
         ${list.map((t) => `<li><span class="check-dot" aria-hidden="true">${tick(13)}</span><span>${t}</span></li>`).join('')}
@@ -303,6 +340,7 @@ const NAV = [
   { key: 'how', label: 'How It Works', href: '/how-it-works' },
   { key: 'safety', label: 'Safety', href: '/linkedin-account-safety' },
   { key: 'unibox', label: 'Unibox', href: '/unibox' },
+  { key: 'pricing', label: 'Pricing', href: '/pricing' },
   { key: 'compare', label: 'Compare', href: '/compare' },
   { key: 'faq', label: 'FAQ', href: '/faq' },
 ];
@@ -353,7 +391,7 @@ const AI = [
 ];
 
 const FOOT = [
-  { title: 'Product', links: [['/features', 'Features'], ['/how-it-works', 'How it works'], ['/unibox', 'Unibox & AI replies'], ['/linkedin-lead-sourcing', 'LinkedIn lead sourcing'], ['/book-a-demo', 'Book a demo']] },
+  { title: 'Product', links: [['/features', 'Features'], ['/how-it-works', 'How it works'], ['/unibox', 'Unibox & AI replies'], ['/linkedin-lead-sourcing', 'LinkedIn lead sourcing'], ['/pricing', 'Pricing'], ['/book-a-demo', 'Book a demo']] },
   { title: 'Resources', links: [['/linkedin-account-safety', 'LinkedIn account safety'], ['/compare', 'Compare tools'], ['/use-cases', 'Use cases'], ['/faq', 'FAQ']] },
   { title: 'Company', links: [['/about', 'About Connectora'], [config.org.url, 'Growthmak', true], [`mailto:${config.org.email}`, config.org.email]] },
 ];

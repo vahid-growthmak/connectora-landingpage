@@ -1,18 +1,18 @@
 import { demoBtn, btn, pageHero, stickySection, table, featureList, orderedList, faqSection, closingCta, icon, tick } from '../ui.mjs';
 
-const setupCard = (title, inner, why) => `
+const setupCard = (title, inner, why, plan = '') => `
 <div class="card card-pad" style="box-shadow:var(--shadow-md)">
   <p class="overline">${title}</p>
   <div class="mt-4">${inner}</div>
 </div>
-${why ? `<div class="disclosure" style="margin-top:0"><strong>Why it fits:</strong> ${why}</div>` : ''}`;
+${why ? `<div class="disclosure" style="margin-top:0"><strong>Why it fits:</strong> ${why}</div>` : ''}
+${plan ? `<p class="flex items-center gap-3" style="flex-wrap:wrap"><span class="pill" style="color:var(--blue-ink);border-color:var(--blue-100);background:var(--blue-050)">Plan</span><span>${plan}</span></p>` : ''}`;
 
 const personaAside = (ic, label) => `<div class="flex items-center gap-3 mt-8"><span class="icon-tile solid">${icon(ic, 24)}</span><span class="pill">${label}</span></div>`;
 
 const faqs = [
   { q: "Can an agency manage several clients' LinkedIn accounts in Connectora?", a: 'Yes. Connect each account, then assign accounts to the campaigns for each client. Daily limits are tracked per account across all campaigns.' },
-  // TODO: if plans will cap connected accounts, change this answer to "depends on your plan".
-  { q: 'How many LinkedIn accounts can I connect?', a: 'There is no fixed product limit on connected accounts. Talk to us on the demo about your setup.' },
+  { q: 'How many LinkedIn accounts can I connect?', a: 'As many as you need. Pricing is per connected LinkedIn account: $24 each for 1 to 2 accounts, $21 for 3 to 10, $18 for 11 to 50 and $15 for 51 or more. See <a href="/pricing">pricing</a>.' },
   { q: 'Can different team members reply from their own accounts?', a: 'Yes. The Unibox shows which account each conversation belongs to, and replies are sent from that account.' },
 ];
 
@@ -56,7 +56,7 @@ ${stickySection({
     "Schedule in the prospects' timezone, for example 08:00 to 18:30, Monday to Friday.",
     'Sequence: connection request with a short note → message after 1 hour to 1 day → two follow-ups 2 to 3 days apart.',
     "Unibox filtered by campaign for each client's daily reply review.",
-  ]), 'a queue that explains itself ("147 from next week") makes client reporting simple, and the funnel gives acceptance and reply rates per campaign without spreadsheets.'),
+  ]), 'a queue that explains itself ("147 from next week") makes client reporting simple, and the funnel gives acceptance and reply rates per campaign without spreadsheets.', 'Most agencies fit the Agency plan (11 to 50 accounts) at $18 per account a month, white-label included. See <a class="inline-link" href="/pricing">pricing</a>.'),
 })}
 
 ${stickySection({
@@ -70,7 +70,7 @@ ${stickySection({
     "Daily limits set per rep based on each account's safety score.",
     'Reply handling: reps filter the Unibox by their own account; managers filter by campaign.',
     'CRM: a webhook sends every reply, with history, to your CRM via Zapier or Make.',
-  ]), "no rep's profile carries the whole campaign, and a lead is never contacted twice by two reps."),
+  ]), "no rep's profile carries the whole campaign, and a lead is never contacted twice by two reps.", 'Growth, $21 per account a month for 3 to 10 accounts.'),
 })}
 
 ${stickySection({
@@ -83,7 +83,7 @@ ${stickySection({
     'Sequence: connection request with a personal note → one useful message after acceptance → one follow-up after a week.',
     'Limit: start at the default and only raise it if acceptance stays healthy.',
     '15 minutes a day in the Unibox: answer held leads first, use Draft with AI for the rest.',
-  ]), 'your name is on every message, so pace and tone matter more than volume.'),
+  ]), 'your name is on every message, so pace and tone matter more than volume.', 'Starter, $24 per account a month for 1 or 2 accounts.'),
 })}
 
 ${stickySection({

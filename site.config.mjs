@@ -22,9 +22,28 @@ export default {
     country: 'IN',
   },
 
-  // TODO: real author for the Safety and Compare articles (E-E-A-T signal).
-  // While name is empty, bylines read "By the Growthmak team" and the schema author is the Organization.
-  author: { name: '', role: '', linkedin: '' },
+  // Author of the Safety and Compare articles (E-E-A-T signal). Rendered as "By Aakash MK (CEO, Growthmak)".
+  author: { name: 'Aakash MK', role: 'CEO', linkedin: 'https://www.linkedin.com/in/aakashmk/' },
+
+  // Direct access without a demo: shown on Book a Demo, Pricing and in every closing CTA.
+  directContact: {
+    name: 'Hari Prasad',
+    // TODO: add a job title if you want one shown under the name, e.g. 'Head of Growth, Growthmak'.
+    title: 'Connectora team, Growthmak',
+    photo: '/assets/img/hari-prasad.jpg',
+    phoneDisplay: '+91 83418 86288',
+    whatsapp: '918341886288',
+    message: "Hi Hari, I'd like direct access to Connectora without a demo.",
+  },
+
+  // Public list prices (per LinkedIn sender account per month). Decided 17 Sep 2026.
+  // TODO: add INR annual prices (inrAnnual) once confirmed; until then INR shows monthly prices only.
+  plans: [
+    { name: 'Starter', accounts: '1 to 2', min: 1, max: 2, usd: 24, usdAnnual: 19, inr: '2,299', bestFor: 'Founders and consultants', copy: 'For one or two LinkedIn profiles. Every feature, safe defaults, AI reply drafts.' },
+    { name: 'Growth', accounts: '3 to 10', min: 3, max: 10, usd: 21, usdAnnual: 17, inr: '1,999', bestFor: 'Sales and SDR teams', copy: 'Pool 3 to 10 accounts behind shared campaigns with one inbox for every reply.', popular: true },
+    { name: 'Agency', accounts: '11 to 50', min: 11, max: 50, usd: 18, usdAnnual: 14, inr: '1,699', bestFor: 'Agencies, includes white-label', copy: '11 to 50 accounts across client campaigns, with white-label included.' },
+    { name: 'Scale', accounts: '51 or more', min: 51, max: null, usd: 15, usdAnnual: 12, inr: '1,449', bestFor: 'Large agencies and sales floors', copy: '51 accounts or more. Talk to us about onboarding at scale.' },
+  ],
 
   publishDate: '2026-10-01',
   pricesChecked: '1 October 2026',

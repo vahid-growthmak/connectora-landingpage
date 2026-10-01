@@ -1,10 +1,10 @@
 import config from '../../site.config.mjs';
-import { btn, demoBtn, textLink, secHead, faqSection, marquee, closingCta, icon, tick, arrow } from '../ui.mjs';
-import { heroDashboard, uniboxMock, leadValidationMock, miniPlan, miniReplyCheck, miniHold, miniPrivate, miniWithdraw } from '../mocks.mjs';
+import { waLink, btn, demoBtn, textLink, secHead, faqSection, marquee, closingCta, icon, tick, arrow } from '../ui.mjs';
+import { planCards, PRICE_ANSWER } from '../pricing.mjs';
+import { uniboxMock, leadValidationMock, miniPlan, miniReplyCheck, miniHold, miniPrivate, miniWithdraw } from '../mocks.mjs';
 
 const faqs = [
-  { q: 'How much does Connectora cost?', a: 'Pricing is shared on a short demo call, once we understand how many LinkedIn accounts you run and the support you need. <a href="/book-a-demo">Book a demo</a>.' },
-  { q: 'Is there a free trial?', a: 'Yes. Connectora comes with a 7-day free trial. <a href="/book-a-demo">Book a short demo</a> to get access.' },
+  { q: 'Is there a free trial?', a: `Yes. Connectora comes with a 7-day free trial. <a href="/book-a-demo">Book a short demo</a> to get access, or <a href="${waLink()}" target="_blank" rel="noopener">message us on WhatsApp</a> for direct access without a demo.` },
   { q: 'Do I need to keep my computer on?', a: 'No. Connectora runs in the cloud. There is no browser extension, and campaigns keep running when your laptop is closed.' },
   { q: 'Does Connectora store my LinkedIn password?', a: 'No. You connect each account on a secure hosted sign-in page. Connectora never sees or stores your LinkedIn password or cookies.' },
   { q: 'Can one campaign send from several LinkedIn accounts?', a: "Yes. Pick any number of connected accounts as senders. Connectora spreads leads across them in proportion to each account's remaining daily allowance." },
@@ -29,6 +29,7 @@ export default {
   nav: 'home',
   title: 'Connectora: Safe LinkedIn Outreach Tool for B2B Teams',
   llmsTitle: 'Home',
+  head: '<link rel="preconnect" href="https://demo.arcade.software" crossorigin>',
   description: 'Run LinkedIn connection and follow-up campaigns from multiple accounts, paced safely, with every reply in one inbox and AI-drafted responses. Book a demo.',
 
   body: () => `
@@ -52,8 +53,11 @@ export default {
         </ul>
       </div>
     </div>
-    <div class="bleed" data-reveal style="--reveal-delay:250ms">
-      <div class="rise-panel">${heroDashboard()}</div>
+    <div class="hero-demo" data-reveal style="--reveal-delay:250ms">
+      <div class="arcade-frame">
+        <!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(56.8027% + 41px); height: 0px; width: 100%;"><iframe src="https://demo.arcade.software/voufGWJ9HX6tY8jevMEP?embed&embed_mobile=inline&embed_desktop=inline&squared=true&show_copy_link=true" title="Connectora Demo" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write; autoplay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
+      </div>
+      <p class="sr-only">Interactive Connectora demo: a campaign dashboard showing a LinkedIn outreach funnel from queued to replied.</p>
     </div>
   </div>
 </section>
@@ -219,6 +223,14 @@ export default {
   </div>
 </section>
 
+<section class="section" id="pricing">
+  <div class="container">
+    ${secHead({ kicker: 'Pricing', h2: 'How much does <span class="serif">Connectora cost?</span>', center: true, answer: `<strong>${PRICE_ANSWER}</strong>` })}
+    ${planCards()}
+    <p class="mt-10 text-center text-muted" data-reveal>Full details and examples on <a class="inline-link" href="/pricing">Pricing</a>.</p>
+  </div>
+</section>
+
 <section class="section" id="customers">
   <div class="container">
     <div class="m-mid mx-auto text-center" data-reveal>
@@ -234,7 +246,7 @@ ${faqSection(faqs, { after: `More answers on the <a class="inline-link" href="/f
 
 ${closingCta({
   heading: 'See your next LinkedIn campaign planned out, before it sends',
-  body: 'In a short demo we connect the dots for your team: how many accounts, which leads, what a safe daily pace looks like, and what pricing fits.',
+  body: 'In a short demo we connect the dots for your team: how many accounts, which leads, what a safe daily pace looks like, and which plan fits.',
   secondary: { href: '/how-it-works', label: 'See how it works' },
 })}
 `,
@@ -278,6 +290,7 @@ ${closingCta({
           'Sales Navigator search and post-engager lead sourcing',
           'Signed webhooks to Zapier, Make and CRMs',
         ],
+        offers: { '@type': 'AggregateOffer', priceCurrency: 'USD', lowPrice: '15.00', highPrice: '24.00', offerCount: 4, url: '{{SITE_URL}}/pricing' },
         publisher: { '@id': '{{SITE_URL}}/#growthmak' },
       },
       {
@@ -291,7 +304,7 @@ ${closingCta({
       {
         '@type': 'FAQPage',
         mainEntity: [
-          { '@type': 'Question', name: 'How much does Connectora cost?', acceptedAnswer: { '@type': 'Answer', text: 'Pricing is shared on a short demo call, once the Connectora team understands how many LinkedIn accounts you run and the support you need.' } },
+          { '@type': 'Question', name: 'How much does Connectora cost?', acceptedAnswer: { '@type': 'Answer', text: 'Connectora costs $24 per LinkedIn sender account per month for 1 to 2 accounts, $21 for 3 to 10, $18 for 11 to 50 and $15 for 51 or more. Annual billing lowers these to $19, $17, $14 and $12. Every plan includes every feature; only the number of accounts changes the price.' } },
           { '@type': 'Question', name: 'Does Connectora have a free trial?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Connectora comes with a 7-day free trial. Book a short demo to get access.' } },
           { '@type': 'Question', name: 'Do I need to keep my computer on for Connectora to work?', acceptedAnswer: { '@type': 'Answer', text: 'No. Connectora runs in the cloud. There is no browser extension, and campaigns keep running when your computer is off.' } },
           { '@type': 'Question', name: 'Does Connectora store my LinkedIn password?', acceptedAnswer: { '@type': 'Answer', text: 'No. Each LinkedIn account is connected on a secure hosted sign-in page. Connectora never sees or stores your LinkedIn password or cookies.' } },

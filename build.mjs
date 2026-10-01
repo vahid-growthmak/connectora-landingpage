@@ -84,7 +84,7 @@ ${indexed.map((p) => `- [${p.llmsTitle || p.title}](${SITE}${p.slug}): ${p.descr
 ## Company
 
 - Built by [Growthmak](${config.org.url}). Contact: ${config.org.email}
-- Pricing is shared on a demo call, and booking a demo includes a 7-day free trial: ${SITE}/book-a-demo
+- Pricing is public and per LinkedIn sender account: $24, $21, $18 or $15 a month by team size, lower on annual billing: ${SITE}/pricing\n- Booking a demo includes a 7-day free trial: ${SITE}/book-a-demo
 `;
 fs.writeFileSync(path.join(dist, 'llms.txt'), llms);
 

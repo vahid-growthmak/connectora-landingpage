@@ -1,4 +1,5 @@
-import { pageHero, accordion, closingCta, textLink, demoBtn } from '../ui.mjs';
+import { pageHero, accordion, closingCta, textLink, demoBtn, waLink } from '../ui.mjs';
+import config from '../../site.config.mjs';
 
 const GROUPS = [
   {
@@ -54,11 +55,12 @@ const GROUPS = [
   },
   {
     id: 'pricing-and-demo', title: 'Pricing and demo',
-    more: ['/book-a-demo', 'Book a demo'],
+    more: ['/pricing', 'See pricing'],
     items: [
-      { q: 'How much does Connectora cost?', a: 'Pricing is shared on a short demo call, once we understand how many LinkedIn accounts you run and the level of support you need. There are no published plans yet.' },
-      { q: 'Is there a free trial?', a: 'Yes. Connectora comes with a 7-day free trial. Book a short demo to get access, so you can see the plan, pacing and inbox on your own campaigns before committing.' },
-      { q: 'How do I get started?', a: 'Book a demo. We review your accounts and targets, show you Connectora on a sample campaign, start your 7-day free trial, and agree a setup and price that fit.' },
+      { q: 'How much does Connectora cost?', a: 'Connectora is priced per LinkedIn sender account per month: $24 for 1 to 2 accounts, $21 for 3 to 10, $18 for 11 to 50 and $15 for 51 or more. Annual billing lowers these to $19, $17, $14 and $12. Every plan includes every feature. See <a href="/pricing">pricing</a>.' },
+      { q: 'Is there a white-label option?', a: 'Yes. The Agency plan, for 11 to 50 LinkedIn accounts, includes white-label for agencies that run outreach for clients.' },
+      { q: 'Is there a free trial?', a: `Yes. Connectora comes with a 7-day free trial. Book a short demo to get access, so you can see the plan, pacing and inbox on your own campaigns before committing. Want to try it without a demo? <a href="${waLink()}" target="_blank" rel="noopener">Message ${config.directContact.name} on WhatsApp</a> for direct access.` },
+      { q: 'How do I get started?', a: 'Book a demo. We review your accounts and targets, show you Connectora on a sample campaign, start your 7-day free trial, and set you up on the plan that fits your number of accounts.' },
     ],
   },
 ];

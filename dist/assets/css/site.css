@@ -934,6 +934,71 @@ code {
 @media (max-width: 1023px) { .toc { position: static; } .toc-card { display: none; } }
 .section.tight-top { padding-top: 0; }
 
+/* ---------- Direct access (WhatsApp) ---------- */
+.btn-whatsapp { background: #25d366; color: #fff; border: 1px solid transparent; box-shadow: 0 14px 30px -12px #25d3667a; }
+.btn-whatsapp:hover { background: #1ebe5b; transform: translateY(-2px); }
+.direct-card { position: relative; display: grid; gap: 1.5rem; align-items: center; padding: clamp(1.5rem, 3.5vw, 2.25rem); border: 1px solid var(--line); border-radius: var(--r-2xl); background: var(--surface); box-shadow: var(--shadow-md); overflow: hidden; isolation: isolate; }
+.direct-card::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(55% 80% at 0 0, #25d3661a, transparent 70%); }
+@media (min-width: 640px) { .direct-card { grid-template-columns: auto minmax(0, 1fr); gap: 2rem; } }
+.direct-who { position: relative; width: fit-content; }
+.direct-photo { display: block; width: 96px; height: 96px; border-radius: 999px; overflow: hidden; background: #7a3fd1; box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--line-2); }
+.direct-photo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); }
+.direct-photo.sm { width: 36px; height: 36px; box-shadow: 0 0 0 2px #ffffff33; flex-shrink: 0; }
+.direct-online { position: absolute; right: 4px; bottom: 6px; width: 18px; height: 18px; border-radius: 999px; background: #25d366; border: 3px solid var(--surface); animation: livePulse 2.2s ease-out infinite; }
+.direct-body h3 { margin-top: .5rem; font-size: clamp(1.35rem, 2.2vw, 1.75rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
+.direct-body > p:not(.overline):not(.direct-name) { margin-top: .75rem; color: var(--muted); line-height: 1.7; max-width: 58ch; }
+.direct-name { margin-top: .75rem; font-size: .9rem; color: var(--muted); }
+.direct-name strong { color: var(--fg); }
+.direct-phone { font-weight: 600; color: var(--fg); font-variant-numeric: tabular-nums; }
+.direct-card.is-dark { background: #ffffff0a; border-color: #ffffff1f; color: #fff; box-shadow: none; }
+.direct-card.is-dark .direct-body > p:not(.overline), .direct-card.is-dark .direct-name { color: #ffffffa6; }
+.direct-card.is-dark .direct-name strong, .direct-card.is-dark .direct-phone { color: #fff; }
+.direct-card.is-dark .direct-photo { box-shadow: 0 0 0 4px var(--ink), 0 0 0 5px #ffffff33; }
+.direct-card.is-dark .direct-online { border-color: var(--ink); }
+.direct-inline { display: inline-flex; align-items: center; gap: .75rem; margin-top: 1.5rem; padding: .5rem 1rem .5rem .5rem; border: 1px solid #ffffff24; border-radius: 999px; font-size: .9rem; color: #ffffffb3; transition: background-color .2s, border-color .2s; }
+.direct-inline:hover { background: #25d3661f; border-color: #25d36680; color: #fff; }
+.direct-inline strong { color: #fff; font-weight: 600; }
+.direct-inline .arrow { color: #25d366; }
+@media (max-width: 639px) { .direct-inline { border-radius: 18px; align-items: flex-start; } }
+
+/* ---------- Pricing ---------- */
+.price-controls { display: flex; flex-wrap: wrap; gap: .75rem 1rem; align-items: center; margin-top: 2.25rem; }
+.seg { display: inline-flex; padding: .3rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); box-shadow: var(--shadow-sm); }
+.seg button { padding: .5rem 1rem; border-radius: 999px; font-size: .88rem; font-weight: 600; color: var(--muted); transition: background-color .25s var(--ease-out), color .2s; white-space: nowrap; }
+.seg button[aria-pressed="true"] { background: var(--blue); color: #fff; }
+.seg button em { font-style: normal; font-size: .74rem; margin-left: .35rem; padding: .1rem .45rem; border-radius: 999px; background: #22c55e1f; color: var(--success-ink); }
+.seg button[aria-pressed="true"] em { background: #ffffff33; color: #fff; }
+.no-js .price-controls { display: none; }
+.plans { display: grid; gap: 1.25rem; margin-top: 3rem; }
+@media (min-width: 700px) { .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1180px) { .plans { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.plan { position: relative; display: flex; flex-direction: column; padding: 1.75rem; border: 1px solid var(--line); border-radius: var(--r-xl); background: var(--surface); transition: transform .3s var(--ease-out), box-shadow .3s var(--ease-out), border-color .3s; }
+.plan:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--fg); }
+.plan .plan-top { display: flex; align-items: flex-start; justify-content: space-between; gap: .5rem; }
+.plan .plan-name { font-size: .92rem; font-weight: 600; color: var(--muted); }
+.plan h3 { margin-top: .9rem; font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em; }
+.plan .accounts { margin-top: .25rem; font-size: .92rem; color: var(--muted); }
+.plan .price { display: flex; align-items: baseline; gap: .4rem; margin-top: 1.5rem; }
+.plan .amount { font-size: clamp(2.6rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+.plan .per { font-size: .86rem; color: var(--muted); line-height: 1.3; }
+.plan .alt { margin-top: .6rem; min-height: 1.4em; font-size: .84rem; color: var(--muted); }
+.plan .alt strong { color: var(--success-ink); font-weight: 600; }
+.plan .copy { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .95rem; line-height: 1.65; flex: 1; }
+.plan .btn { margin-top: 1.5rem; width: 100%; }
+.plan.is-popular { background: var(--blue-grad); color: #fff; border-color: transparent; box-shadow: var(--shadow-lg); }
+.plan.is-popular::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background-image: radial-gradient(#ffffff14 1px, transparent 1px); background-size: 14px 14px; pointer-events: none; }
+.plan.is-popular > * { position: relative; }
+.plan.is-popular .plan-name, .plan.is-popular .accounts, .plan.is-popular .per, .plan.is-popular .alt, .plan.is-popular .copy { color: #ffffffb3; }
+.plan.is-popular .alt strong { color: #86efac; }
+.plan.is-popular .copy { border-color: #ffffff26; }
+.plan .badge { white-space: nowrap; flex-shrink: 0; padding: .25rem .7rem; border-radius: 999px; background: #fff; color: var(--blue-ink); font-size: .76rem; font-weight: 700; }
+.included { display: grid; gap: .75rem 2rem; }
+@media (min-width: 768px) { .included { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.included li { display: flex; gap: .8rem; align-items: flex-start; color: var(--fg); line-height: 1.55; }
+.included .check-dot { margin-top: .1rem; }
+.save-cell { color: var(--success-ink) !important; font-weight: 700; }
+.us-cell { color: var(--fg) !important; font-weight: 600; }
+
 /* ---------- Helpers ---------- */
 .mt-1 { margin-top: .25rem; } .mt-2 { margin-top: .5rem; } .mt-3 { margin-top: .75rem; } .mt-4 { margin-top: 1rem; } .mt-5 { margin-top: 1.25rem; } .mt-6 { margin-top: 1.5rem; } .mt-8 { margin-top: 2rem; } .mt-10 { margin-top: 2.5rem; } .mt-12 { margin-top: 3rem; } .mt-14 { margin-top: 3.5rem; } .mt-16 { margin-top: 4rem; }
 .gap-grid { display: grid; gap: 1.25rem; }
@@ -960,3 +1025,23 @@ code {
   .funnel-dot { animation: none !important; }
   .js .mock .stage .bar i { transform: none; transition: none; }
 }
+.direct-inline.light { border-color: var(--line-2); color: var(--muted); background: var(--surface); }
+.direct-inline.light strong { color: var(--fg); }
+.direct-inline.light:hover { background: #25d36614; border-color: #25d36699; color: var(--fg); }
+.direct-inline.light .direct-photo.sm { box-shadow: 0 0 0 2px #25d36666; }
+
+/* Arcade interactive demo (home hero): one clean card, sized so the whole demo fits on screen */
+.hero-demo { padding-bottom: clamp(3rem, 6vw, 5rem); }
+.arcade-frame {
+  width: min(100%, calc((100svh - 150px) * 1.7605));
+  min-width: min(100%, 720px);
+  margin-inline: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 0 0 1px rgba(19,19,19,.08), 0 40px 90px -40px rgba(7,40,90,.45);
+}
+.arcade-frame iframe { display: block; border: 0; }
+/* Desktop: drop the 41px Arcade reserves for its mobile step bar, which removes the empty strip. */
+@media (min-width: 768px) { .arcade-frame > div { padding-bottom: 56.8027% !important; } }
+@media (max-width: 767px) { .arcade-frame { border-radius: 14px; } }

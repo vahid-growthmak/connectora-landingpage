@@ -14,9 +14,11 @@
 - [Compare LinkedIn automation tools](/compare): An honest 2026 comparison of LinkedIn automation tools: pricing, trials, inboxes, email and safety approach, plus when each tool is the better choice.
 - [FAQ](/faq): Straight answers about Connectora: how it works, LinkedIn limits and account safety, the Unibox and AI drafts, lead sources, your data and pricing.
 - [About](/about): Connectora is a LinkedIn outreach platform built by Growthmak, a B2B growth agency that runs LinkedIn campaigns daily. Why we built it, and our principles.
-- [Book a demo (pricing)](/book-a-demo): See Connectora on your own LinkedIn targets: a safe sending plan for your accounts, the Unibox and AI replies, plus pricing for your setup. Book a demo.
+- [Book a demo](/book-a-demo): See Connectora on your own LinkedIn targets: a safe sending plan for your accounts, the Unibox and AI replies, and the right plan for your team.
+- [Pricing](/pricing): Per-account pricing for LinkedIn outreach: $24, $21, $18 or $15 per sender account a month by team size, lower on annual billing. All features included.
 
 ## Company
 
 - Built by [Growthmak](https://growthmak.com/). Contact: info@growthmak.com
-- Pricing is shared on a demo call, and booking a demo includes a 7-day free trial: /book-a-demo
+- Pricing is public and per LinkedIn sender account: $24, $21, $18 or $15 a month by team size, lower on annual billing: /pricing
+- Booking a demo includes a 7-day free trial: /book-a-demo

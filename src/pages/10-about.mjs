@@ -1,5 +1,5 @@
 import config from '../../site.config.mjs';
-import { demoBtn, btn, pageHero, splitSection, stickySection, blockSection, secHead, table, featureList, icon, tick } from '../ui.mjs';
+import { directInline, demoBtn, btn, pageHero, splitSection, stickySection, blockSection, secHead, table, featureList, icon, tick } from '../ui.mjs';
 
 const quotes = () => config.clientQuotes.length
   ? `<div class="gap-grid cols-2 mt-12">${config.clientQuotes.map((q) => `<figure class="card card-pad"><blockquote class="t-h4" style="font-weight:500">“${q.quote}”</blockquote><figcaption class="mt-5 text-muted">${q.name}, ${q.role}, ${q.company}</figcaption></figure>`).join('')}</div>`
@@ -102,6 +102,7 @@ ${stickySection({
           ${demoBtn({ magnetic: true, cta: 'about_contact' })}
           ${btn({ href: `mailto:${config.org.email}`, label: config.org.email, variant: 'ghost-d' })}
         </div>
+        ${directInline()}
       </div>
       <ul class="cta-list" data-reveal style="--reveal-delay:120ms">
         <li><span class="check-dot" aria-hidden="true">${icon('calendar', 13)}</span><span>Book a demo: <a class="ul-link" href="/book-a-demo" style="color:#fff">/book-a-demo</a></span></li>

@@ -37,13 +37,21 @@ The build also generates `sitemap.xml`, `robots.txt` (with the AI crawlers allow
 
 ## Before launch
 
+Pricing (prices live in `site.config.mjs` → `plans`; never publish costs, margins, discount floors or the Founding Partner offer):
+- [ ] Tier boundaries: 11 accounts ($198) cost less than 10 ($210), and 51 ($765) less than 50 ($900). Keep it, or bill each band at its own rate.
+- [ ] INR annual prices: add `inrAnnual` per plan. Until then the INR + Annual view shows the USD annual price.
+- [ ] Confirm annual billing should be public, and the taxes line (e.g. 18% GST for Indian customers).
+- [ ] White-label: confirm what it covers and whether Scale includes it. Today the site says Agency only.
+- [ ] Not on the site until confirmed: how mid-cycle account changes are billed, whether paused accounts are billed, payment methods.
+- [ ] "Unlimited campaigns and sequences": confirm this is how you want to package it.
+- [ ] Direct access: `directContact.title` in `site.config.mjs` shows under Hari Prasad's name. Change it to a real job title if you want one.
+
+
 - [ ] Set `SITE_URL` (it replaces `{{SITE_URL}}` everywhere).
-- [ ] Set `author` in `site.config.mjs` for the Safety and Compare articles.
 - [ ] Confirm `org.city` (Bengaluru) and add `legalName` to the About schema once the legal entity is confirmed.
 - [ ] Add client quotes to `clientQuotes` (written permission only). Until then the quote area is hidden.
 - [ ] Cal.com event: add the suggested booking questions from the brief (accounts, targets, current tool).
 - [ ] Unibox FAQ: confirm company context and tone rules are set up per client during onboarding, then extend the answer (TODO in `src/pages/05-unibox.mjs`).
-- [ ] Use cases FAQ: confirm "no fixed limit on connected accounts" fits your plans.
 - [ ] Re-check competitor prices on the publish day and update `pricesChecked`.
 - [ ] Privacy Policy and Terms: not built. Add them and link them from the footer.
 - [ ] `/unibox` is both a marketing page and an app route. If the app and this site share a domain, move one of them.

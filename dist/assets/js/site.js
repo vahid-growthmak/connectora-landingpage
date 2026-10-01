@@ -221,6 +221,47 @@
     document.querySelectorAll('h1.split-lines').forEach(splitLines);
   };
 
+  /* ---------- Pricing toggles (billing period, currency) ---------- */
+  const priceRoot = document.querySelector('[data-pricing]');
+  if (priceRoot) {
+    const state = { billing: 'monthly', currency: 'usd' };
+    const render = () => {
+      priceRoot.querySelectorAll('.plan').forEach((plan) => {
+        const d = plan.dataset;
+        const amount = plan.querySelector('.amount');
+        const per = plan.querySelector('.per');
+        const alt = plan.querySelector('.alt');
+        if (state.currency === 'usd') {
+          if (state.billing === 'monthly') {
+            amount.textContent = `$${d.usd}`;
+            per.innerHTML = 'per account<br>per month';
+            alt.innerHTML = `<strong>$${d.usdAnnual}</strong> per account billed annually`;
+          } else {
+            amount.textContent = `$${d.usdAnnual}`;
+            per.innerHTML = 'per account / month<br>billed annually';
+            alt.innerHTML = `<strong>Save $${(d.usd - d.usdAnnual) * 12}</strong> per account a year vs monthly`;
+          }
+        } else if (state.billing === 'annual' && d.inrAnnual) {
+          amount.textContent = `₹${d.inrAnnual}`;
+          per.innerHTML = 'per account / month<br>billed annually';
+          alt.textContent = `₹${d.inr} on monthly billing`;
+        } else {
+          amount.textContent = `₹${d.inr}`;
+          per.innerHTML = 'per account<br>per month';
+          alt.textContent = state.billing === 'annual' ? `Annual billing in USD: $${d.usdAnnual} per account / month` : `$${d.usd} per account / month in USD`;
+        }
+      });
+    };
+    priceRoot.querySelectorAll('[data-set]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const [key, value] = btn.dataset.set.split(':');
+        state[key] = value;
+        btn.parentElement.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+        render();
+      });
+    });
+  }
+
   /* ---------- Table of contents scroll-spy ---------- */
   const tocLinks = [...document.querySelectorAll('.toc-card a[href^="#"]')];
   if (tocLinks.length && 'IntersectionObserver' in window) {
