@@ -1,0 +1,14 @@
+{
+  "name": "connectora-landing",
+  "private": true,
+  "type": "module",
+  "description": "Connectora marketing site: static, pre-rendered pages in the Growthmak design system.",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs && node serve.mjs",
+    "serve": "node serve.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

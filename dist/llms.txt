@@ -1,0 +1,22 @@
+# Connectora
+
+> Connectora is a LinkedIn outreach automation platform built by Growthmak. It runs connection and follow-up campaigns from multiple LinkedIn accounts and manages every reply in one inbox. It is built safety-first: per-account limits, human-paced sending and automatic pauses when LinkedIn signals a limit.
+
+## Pages
+
+- [Home](/): Run LinkedIn connection and follow-up campaigns from multiple accounts, paced safely, with every reply in one inbox and AI-drafted responses. Book a demo.
+- [Features](/features): Sequences, multi-account sending, plan-ahead scheduling, account safety, invite withdrawals, a unified inbox with AI drafts and CRM webhooks. See it all.
+- [How it works](/how-it-works): Connect accounts, add leads, build a sequence, set the schedule and launch. See exactly how Connectora plans, paces and stops LinkedIn outreach on reply.
+- [LinkedIn account safety](/linkedin-account-safety): What LinkedIn actually says about automation and invite limits, what gets accounts restricted, and the 10 safeguards Connectora uses to keep risk low.
+- [Unibox & AI replies](/unibox): Answer replies from every LinkedIn sender account in one inbox. Get three AI drafts per click, approve before sending, keep personal chats private.
+- [LinkedIn lead sourcing](/linkedin-lead-sourcing): Turn a Sales Navigator search or a LinkedIn post's reactions and comments into a clean lead list, or upload your own. Every profile is validated first.
+- [Use cases](/use-cases): How agencies, B2B sales teams, founders and event marketers use Connectora to run safe, multi-account LinkedIn outreach, with example setups for each.
+- [Compare LinkedIn automation tools](/compare): An honest 2026 comparison of LinkedIn automation tools: pricing, trials, inboxes, email and safety approach, plus when each tool is the better choice.
+- [FAQ](/faq): Straight answers about Connectora: how it works, LinkedIn limits and account safety, the Unibox and AI drafts, lead sources, your data and pricing.
+- [About](/about): Connectora is a LinkedIn outreach platform built by Growthmak, a B2B growth agency that runs LinkedIn campaigns daily. Why we built it, and our principles.
+- [Book a demo (pricing)](/book-a-demo): See Connectora on your own LinkedIn targets: a safe sending plan for your accounts, the Unibox and AI replies, plus pricing for your setup. Book a demo.
+
+## Company
+
+- Built by [Growthmak](https://growthmak.com/). Contact: info@growthmak.com
+- Pricing is shared on a demo call: /book-a-demo
