@@ -101,7 +101,7 @@ export const table = ({ head, rows, caption = '', cls = '', rowHeader = true, la
     ${caption ? `<caption class="sr-only">${caption}</caption>` : ''}
     <thead><tr>${head.map((h) => `<th scope="col">${h}</th>`).join('')}</tr></thead>
     <tbody>${rows
-      .map((r) => `<tr>${r.map((c, i) => (i === 0 && rowHeader ? `<th scope="row">${c}</th>` : `<td>${c}</td>`)).join('')}</tr>`)
+      .map((r) => `<tr>${r.map((c, i) => (i === 0 && rowHeader ? `<th scope="row" data-label="${attr(String(head[i] || '').replace(/<[^>]+>/g, ''))}">${c}</th>` : `<td data-label="${attr(String(head[i] || '').replace(/<[^>]+>/g, ''))}"><span class="td-v">${c}</span></td>`)).join('')}</tr>`)
       .join('')}</tbody>
   </table>
 </div>`;

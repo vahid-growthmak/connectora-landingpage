@@ -19,7 +19,8 @@ export const planCards = () => `
     <p class="copy">${p.copy}</p>
     ${btn({ href: '/book-a-demo', label: 'Book a demo', variant: p.popular ? 'white' : 'primary', cta: `plan_${p.name.toLowerCase()}` })}
   </article>`).join('')}
-</div>`;
+</div>
+<p class="plans-hint" aria-hidden="true">Swipe to see all four plans <svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true" width="14" height="14"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg></p>`;
 
 // Plan table (Pricing page).
 export const planTable = () => table({

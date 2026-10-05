@@ -1045,3 +1045,147 @@ code {
 /* Desktop: drop the 41px Arcade reserves for its mobile step bar, which removes the empty strip. */
 @media (min-width: 768px) { .arcade-frame > div { padding-bottom: 56.8027% !important; } }
 @media (max-width: 767px) { .arcade-frame { border-radius: 14px; } }
+
+/* ==========================================================================
+   Mobile & tablet refinements
+   ========================================================================== */
+
+/* Swipe hint for wide tables that keep horizontal scroll (Compare) */
+.swipe-hint { display: none; align-items: center; gap: .4rem; margin-bottom: .75rem; font-size: .8rem; font-weight: 600; color: var(--muted); }
+.swipe-hint svg { color: var(--blue); }
+
+@media (max-width: 767px) {
+  .swipe-hint { display: inline-flex; }
+
+  /* Tables become stacked cards with labelled fields (Compare keeps sideways scroll) */
+  .table-wrap:not(.keep-scroll) { overflow: visible; border: 0; background: transparent; box-shadow: none; border-radius: 0; }
+  .data-table:not(.compare-table) { min-width: 0; font-size: .95rem; }
+  .data-table:not(.compare-table) thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .data-table:not(.compare-table) tbody { display: grid; gap: .75rem; }
+  .data-table:not(.compare-table) tr { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm); }
+  .data-table:not(.compare-table) tbody tr:hover { background: var(--surface); }
+  .data-table:not(.compare-table) th[scope="row"] { display: block; padding: .9rem 1rem .75rem; border-bottom: 1px solid var(--line) !important; background: #fafcff; font-size: 1rem; }
+  .data-table:not(.compare-table) td { display: grid; grid-template-columns: minmax(0, 38%) minmax(0, 1fr); gap: .75rem; align-items: baseline; padding: .7rem 1rem; border-bottom: 1px solid var(--line) !important; }
+  .data-table:not(.compare-table) tr > :last-child { border-bottom: 0 !important; }
+  .data-table:not(.compare-table) td::before { content: attr(data-label); font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted-2); line-height: 1.5; }
+  .data-table:not(.compare-table) td:first-child { color: var(--muted); font-weight: 400; }
+  .data-table .num-cell { width: auto; }
+
+  /* Compare table: smaller cells, pinned first column */
+  .compare-table { min-width: 860px; font-size: .9rem; }
+  .compare-table th, .compare-table td { padding: .8rem .9rem; }
+  .compare-table tbody th { white-space: normal; min-width: 120px; box-shadow: 1px 0 0 var(--line); }
+
+  /* Readable section intros: left-aligned on phones, lighter answer text */
+  .sec-head.center, .m-mid.text-center { text-align: left; }
+  .sec-head.center .answer { margin-inline: 0; }
+  .answer { font-size: 1.02rem; line-height: 1.65; }
+  .answer strong { font-weight: 500; }
+
+  /* Hero trust strip: aligned ticks */
+  .trust-strip { display: grid; justify-content: center; justify-items: start; gap: .65rem; }
+
+  /* How it works steps: tighter */
+  .process ol { gap: 2.25rem; }
+  .process .pnum { margin-top: 1rem; font-size: 2.4rem; }
+  .process h3 { margin-top: .75rem; }
+
+  /* Webhook diagram stacks vertically */
+  .flow { flex-direction: column; }
+  .flow-arrow { transform: rotate(90deg); }
+
+  /* Pricing: full-width toggles, swipeable plan cards */
+  .price-controls { display: grid; gap: .6rem; }
+  .seg { width: 100%; }
+  .seg button { flex: 1; min-height: 44px; }
+  .plans { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1rem; margin-top: 2rem;
+    margin-inline: calc(-1 * max(var(--gutter), env(safe-area-inset-left))); padding: .5rem max(var(--gutter), env(safe-area-inset-left)) 1.25rem;
+    scroll-padding-inline: max(var(--gutter), env(safe-area-inset-left)); -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .plans::-webkit-scrollbar { display: none; }
+  .plan { flex: 0 0 84%; scroll-snap-align: start; }
+  .plan:hover { transform: none; }
+  .plans + .plans-hint { display: flex; }
+
+  /* Direct-access card */
+  .direct-photo { width: 76px; height: 76px; }
+  .direct-card .cta-stack { align-items: stretch; }
+  .direct-phone { justify-content: center; }
+
+  /* Footer: link columns side by side */
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1.25rem; }
+  .footer-about { grid-column: 1 / -1; max-width: none; }
+  .footer-col:last-child { grid-column: 1 / -1; }
+
+  /* Small labels never below 12px */
+  .overline, .data-table thead th, .footer-col h2, .toc-card h2 { font-size: .75rem; }
+
+  /* Stack cards: less padding on phones */
+  .stack-card-copy { padding: 1.5rem; }
+  .stack-card-visual { min-height: 0; padding: 0 1.25rem 1.5rem; background: none; }
+  .stack-card h3 { margin-top: 1.25rem; }
+
+  /* Path cards, generic cards */
+  .card-pad { padding: 1.4rem; }
+}
+
+/* Comfortable tap targets on touch screens */
+@media (max-width: 1023px) {
+  .breadcrumb a, .breadcrumb [aria-current] { display: inline-flex; align-items: center; min-height: 44px; }
+  .breadcrumb.mb-7 { margin-bottom: .75rem; }
+  .text-link, .direct-phone { display: inline-flex; align-items: center; min-height: 44px; }
+  .seg button { min-height: 44px; }
+  .footer-col a { min-height: 44px; }
+  .inline-link { padding-block: .35rem; }
+}
+
+/* Plans hint (phones only) */
+.plans-hint { display: none; align-items: center; justify-content: center; gap: .4rem; margin-top: .25rem; font-size: .8rem; font-weight: 600; color: var(--muted); }
+
+/* Tablet: two-column plan grid, comfortable split spacing */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .split { gap: 2.5rem; }
+  .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stack-card-grid { grid-template-columns: 1fr; }
+  .stack-card-visual { min-height: 0; padding-top: 0; }
+  .cta-grid { gap: 2rem; }
+  .faq-grid.two { gap: 0 2rem; }
+}
+@media (max-width: 767px) {
+  .data-table:not(.compare-table) th[scope="row"]::before { content: attr(data-label); display: block; margin-bottom: .15rem; font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--muted-2); }
+  .data-table:not(.compare-table) td::before { font-size: .72rem; letter-spacing: .04em; }
+  .data-table:not(.compare-table) td .td-v { min-width: 0; }
+}
+@media (max-width: 639px) {
+  .byline { gap: .25rem .6rem; }
+  .byline > span[aria-hidden="true"] { display: none; }
+  .byline > span:last-child { flex-basis: 100%; padding-left: 2.85rem; margin-top: -.35rem; }
+}
+@media (min-width: 768px) and (max-width: 1100px) {
+  .data-table:not(.compare-table) thead th { white-space: normal; }
+  .data-table:not(.compare-table) th, .data-table:not(.compare-table) td { padding: .85rem 1rem; }
+}
+/* Final phone polish */
+.stack-card-top .tag, .funnel-bar .sub, .funnel-conv, .seg button em { font-size: .75rem; }
+@media (max-width: 767px) {
+  .data-table:not(.compare-table) thead { display: none; }
+  .data-table code, .prose code { white-space: normal; overflow-wrap: anywhere; }
+  .mock .kv { flex-wrap: wrap; row-gap: .4rem; }
+  .mock .kv > * { min-width: 0; }
+  .mock .chip-list, .mock .flex.wrap { flex-wrap: wrap; }
+}
+/* Tablet polish */
+@media (max-width: 1100px) {
+  .data-table:not(.compare-table) { min-width: 0; }
+  .overline, .data-table thead th, .footer-col h2, .toc-card h2 { font-size: .75rem; }
+}
+@media (max-width: 1023px) {
+  .hero .cta-stack .ul-link { display: inline-flex; align-items: center; min-height: 44px; }
+}
+/* Tables in split columns: let them fit their column at every width */
+.data-table:not(.compare-table) { min-width: 0; }
+.data-table code { white-space: normal; overflow-wrap: anywhere; }
+.data-table thead th { white-space: normal; }
+/* Sticky side headings only make sense in the two-column desktop layout */
+@media (max-width: 1023px) {
+  .sticky-col { position: static; top: auto; }
+}

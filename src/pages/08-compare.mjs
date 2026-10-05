@@ -23,7 +23,8 @@ const SRC = [
 ];
 
 const compareTable = () => `
-<div class="table-wrap" role="region" tabindex="0" aria-label="LinkedIn automation tools compared">
+<p class="swipe-hint">Swipe to compare all five tools <svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true" width="14" height="14"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg></p>
+<div class="table-wrap keep-scroll" role="region" tabindex="0" aria-label="LinkedIn automation tools compared">
   <table class="data-table compare-table">
     <caption class="sr-only">Connectora, HeyReach, Expandi, Waalaxy and Dripify compared on pricing, trial, inbox, email, integrations and limits</caption>
     <thead><tr><th scope="col"><span class="sr-only">Criterion</span></th>${TOOLS.map((t, i) => `<th scope="col"${i === 0 ? ' class="is-us"' : ''}>${t}</th>`).join('')}</tr></thead>

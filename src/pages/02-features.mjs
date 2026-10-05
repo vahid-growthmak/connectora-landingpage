@@ -15,7 +15,7 @@ const statusMock = () => `<figure class="mock" role="img" aria-label="Connectora
     </div>
     <div class="mt-4">
       ${[['S', 'b', 'Connected', 'green', 'Premium'], ['P', 'g', 'Connected', 'green', 'Sales Navigator'], ['D', 'p', 'Re-auth needed', 'amber', 'Recruiter']]
-        .map(([a, c, s, t, badge]) => `<div class="kv" style="align-items:center"><span class="flex items-center gap-3"><span class="av ${c}">${a}</span><span class="sk w80" style="width:90px"></span></span><span class="flex gap-3"><span class="mtag">${badge}</span><span class="mtag ${t}">${s}</span></span></div>`).join('')}
+        .map(([a, c, s, t, badge]) => `<div class="kv" style="align-items:center"><span class="flex items-center gap-3"><span class="av ${c}">${a}</span><span class="sk w80" style="width:90px"></span></span><span class="flex gap-3 wrap"><span class="mtag">${badge}</span><span class="mtag ${t}">${s}</span></span></div>`).join('')}
     </div>
     <div class="queue-summary mt-3" style="background:#f59e0b14;color:#92400e">${icon('alert', 14)}<span>Needs attention: hit LinkedIn's invite limit, resumes at 9:00</span></div>
   </div>

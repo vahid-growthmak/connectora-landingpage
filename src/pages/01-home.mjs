@@ -73,7 +73,7 @@ export default {
   <div class="container">
     <div class="split top">
       <div class="sticky-col" data-reveal>
-        <span class="kicker">What is Connectora?</span>
+        <span class="kicker">Overview</span>
         <h2 class="t-h2 mt-5">What is <span class="serif">Connectora?</span></h2>
       </div>
       <div class="content-block" data-reveal style="--reveal-delay:120ms">
