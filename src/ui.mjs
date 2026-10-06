@@ -64,9 +64,10 @@ export const tick = (size = 13) =>
 
 /* ---------------- Brand ---------------- */
 let markId = 0;
+// Official Connectora logo (same SVG as the Connectora app favicon at connectora.growthmak.com).
 export const mark = (cls = 'brand-mark') => {
   const id = `cg${++markId}`;
-  return `<svg class="${cls}" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="${id}" x1="4" y1="2" x2="36" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#36a9ff"/><stop offset=".55" stop-color="#0787fe"/><stop offset="1" stop-color="#063a72"/></linearGradient></defs><circle cx="20" cy="20" r="20" fill="url(#${id})"/><path d="M27.4 13.4a9.6 9.6 0 1 0 0 13.2" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/><circle cx="27.6" cy="13.3" r="2.7" fill="#fff"/><circle cx="27.6" cy="26.7" r="2.7" fill="#fff"/><circle cx="20" cy="20" r="2.2" fill="#fff" opacity=".9"/></svg>`;
+  return `<svg class="${cls}" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="${id}" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse"><stop stop-color="#7c3aed"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs><path d="M 37.5 12.5 A 17 17 0 1 0 37.5 35.5" stroke="url(#${id})" stroke-width="7" stroke-linecap="round" fill="none"/><circle cx="15" cy="21.5" r="3.4" fill="url(#${id})"/><circle cx="35" cy="21.5" r="3.4" fill="url(#${id})"/></svg>`;
 };
 export const brand = (href = '/') =>
   `<a class="brand" href="${href}" aria-label="Connectora home">${mark()}<span class="brand-word">Connectora</span></a>`;
