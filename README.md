@@ -44,7 +44,7 @@ Pricing (prices live in `site.config.mjs` → `plans`; never publish costs, marg
 - [ ] White-label: confirm what it covers and whether Scale includes it. Today the site says Agency only.
 - [ ] Not on the site until confirmed: how mid-cycle account changes are billed, whether paused accounts are billed, payment methods.
 - [ ] "Unlimited campaigns and sequences": confirm this is how you want to package it.
-- [ ] Direct access: `directContact.title` in `site.config.mjs` shows under Hari Prasad's name. Change it to a real job title if you want one.
+- [x] Direct access: `directContact.title` in `site.config.mjs` shows under Hari Prasad's name ("Connectora owner, Growthmak").
 
 
 - [ ] Set `SITE_URL` (it replaces `{{SITE_URL}}` everywhere).

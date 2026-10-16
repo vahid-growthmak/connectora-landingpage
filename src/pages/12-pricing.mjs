@@ -126,7 +126,7 @@ ${closingCta({
           { '@type': 'Question', name: 'How does Connectora pricing compare with HeyReach?', acceptedAnswer: { '@type': 'Answer', text: "At list monthly prices, Connectora costs 55% to 73% less than HeyReach for 1 to 25 LinkedIn accounts. Ten accounts cost $210 a month on Connectora and $790 on HeyReach's Growth plan; 25 accounts cost $450 on Connectora and $999 on HeyReach's Agency plan." } },
           { '@type': 'Question', name: 'Does Connectora charge per message or per lead?', acceptedAnswer: { '@type': 'Answer', text: 'No. There are no message, lead or campaign credits. You pay per LinkedIn account.' } },
           { '@type': 'Question', name: 'Does Connectora offer white-label?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, on the Agency plan for 11 to 50 LinkedIn accounts.' } },
-          { '@type': 'Question', name: 'Is there a free trial?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Connectora comes with a 7-day free trial. Book a short demo to get access, or message the Connectora team on WhatsApp for direct access without a demo.' } },
+          { '@type': 'Question', name: 'Is there a free trial?', acceptedAnswer: { '@type': 'Answer', text: `Yes. Connectora comes with a 7-day free trial. Book a short demo to get access, or message ${config.directContact.name}, the Connectora owner, on WhatsApp for direct access without a demo.` } },
         ],
       },
       {

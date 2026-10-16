@@ -8,6 +8,10 @@ const quotes = () => config.clientQuotes.length
 const growthmakCard = () => `
 <div class="card card-pad" style="box-shadow:var(--shadow-md)">
   <img src="/assets/img/growthmak-logo.svg" alt="Growthmak" width="160" height="41" style="height:34px;width:auto" loading="lazy">
+  <div class="mt-6" style="display:flex;align-items:center;gap:.85rem">
+    <span class="direct-photo" style="width:52px;height:52px;flex-shrink:0"><img src="${config.directContact.photo}" alt="${config.directContact.name}" width="104" height="104" loading="lazy" decoding="async"></span>
+    <span><b>${config.directContact.name}</b><br><span class="text-muted" style="font-size:12.5px">Connectora owner, the idea behind Connectora</span></span>
+  </div>
   <div class="mt-6">
     <div class="kv"><span>Website</span><b><a class="inline-link" href="https://growthmak.com/" target="_blank" rel="noopener">growthmak.com</a></b></div>
     <div class="kv"><span>LinkedIn</span><b><a class="inline-link" href="${config.org.linkedin}" target="_blank" rel="noopener">Growthmak on LinkedIn</a></b></div>
@@ -45,7 +49,7 @@ ${pageHero({
 
 ${splitSection({
   id: 'who-built-connectora',
-  head: secHead({ kicker: 'The team', h2: 'Who built <span class="serif">Connectora?</span>', answer: '<strong>Connectora is built by Growthmak, an AI-driven B2B growth marketing agency in India. Growthmak runs lead generation, growth marketing and performance advertising across LinkedIn, Google, Bing and Meta, and builds AI and automation systems for sales teams. Connectora grew out of its own LinkedIn outreach work.</strong>' }),
+  head: secHead({ kicker: 'The team', h2: 'Who built <span class="serif">Connectora?</span>', answer: `<strong>Connectora is built by Growthmak and owned by ${config.directContact.name}, the idea behind Connectora. Growthmak is an AI-driven B2B growth marketing agency in India that runs lead generation, growth marketing and performance advertising across LinkedIn, Google, Bing and Meta, and builds AI and automation systems for sales teams. Connectora grew out of its own LinkedIn outreach work.</strong>` }),
   visual: growthmakCard(),
 })}
 
@@ -144,6 +148,14 @@ ${stickySection({
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Web browser',
         publisher: { '@id': '{{SITE_URL}}/#growthmak' },
+        author: { '@id': '{{SITE_URL}}/#owner' },
+      },
+      {
+        '@type': 'Person',
+        '@id': '{{SITE_URL}}/#owner',
+        name: config.directContact.name,
+        jobTitle: 'Connectora owner',
+        worksFor: { '@id': '{{SITE_URL}}/#growthmak' },
       },
       {
         '@type': 'BreadcrumbList',

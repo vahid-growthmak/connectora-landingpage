@@ -28,8 +28,7 @@ export default {
   // Direct access without a demo: shown on Book a Demo, Pricing and in every closing CTA.
   directContact: {
     name: 'Hari Prasad',
-    // TODO: add a job title if you want one shown under the name, e.g. 'Head of Growth, Growthmak'.
-    title: 'Connectora team, Growthmak',
+    title: 'Connectora owner, Growthmak',
     photo: '/assets/img/hari-prasad.jpg',
     phoneDisplay: '+91 83418 86288',
     whatsapp: '918341886288',

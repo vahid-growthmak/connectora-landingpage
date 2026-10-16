@@ -138,7 +138,7 @@ ${faqSection(faqs, { after: `<a class="btn btn-primary group" href="#my-cal-inli
         '@type': 'FAQPage',
         mainEntity: [
           { '@type': 'Question', name: 'How much does Connectora cost?', acceptedAnswer: { '@type': 'Answer', text: 'Connectora costs $24 per LinkedIn sender account per month for 1 to 2 accounts, $21 for 3 to 10, $18 for 11 to 50 and $15 for 51 or more, with lower prices on annual billing. Every plan includes every feature.' } },
-          { '@type': 'Question', name: 'Can I get access to Connectora without a demo?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. For direct access without a demo, message the Connectora team on WhatsApp.' } },
+          { '@type': 'Question', name: 'Can I get access to Connectora without a demo?', acceptedAnswer: { '@type': 'Answer', text: `Yes. For direct access without a demo, message ${config.directContact.name}, the Connectora owner, on WhatsApp.` } },
           { '@type': 'Question', name: 'Is the Connectora demo free?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. The demo is free and there is no obligation.' } },
           { '@type': 'Question', name: 'Does Connectora have a free trial?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Booking a demo gets you a 7-day free trial of Connectora.' } },
           { '@type': 'Question', name: 'Do I need to connect my LinkedIn account before a Connectora demo?', acceptedAnswer: { '@type': 'Answer', text: 'No. Connectora is shown on a sample campaign. You connect your own accounts only if you decide to go ahead.' } },
