@@ -22,8 +22,9 @@ export default {
     country: 'IN',
   },
 
-  // Author of the Safety and Compare articles (E-E-A-T signal). Rendered as "By Aakash MK (CEO, Growthmak)".
-  author: { name: 'Aakash MK', role: 'CEO', linkedin: 'https://www.linkedin.com/in/aakashmk/' },
+  // Author of the Safety and Compare articles (E-E-A-T signal).
+  // Rendered as "By Hari Prasad (Connectora owner, Head of Operations, Growthmak)".
+  author: { name: 'Hari Prasad', role: 'Connectora owner, Head of Operations', linkedin: 'https://www.linkedin.com/in/yarragollahariprasad/' },
 
   // Direct access without a demo: shown on Book a Demo, Pricing and in every closing CTA.
   directContact: {

@@ -42,7 +42,7 @@ const dedupeMock = () => `<figure class="mock" role="img" aria-label="Connectora
 
 const faqs = [
   { q: 'Do I need Sales Navigator to use Connectora?', a: 'Only for Sales Navigator searches. File uploads and campaigns work with standard LinkedIn accounts.' },
-  { q: 'Does Connectora find email addresses?', a: 'No. Connectora is focused on LinkedIn outreach. If your file includes an email column, it is kept with the lead.' },
+  { q: 'Does Connectora find email addresses?', a: 'No. Connectora does not look up email addresses. If your file includes an email column, it is kept with the lead.' },
   { q: 'How many leads can one campaign hold?', a: 'A single upload can contain up to 50,000 rows. Daily limits decide when each lead is contacted, never how many you can upload.' },
   { q: 'Is it legal to use LinkedIn data for outreach?', a: 'It depends on your jurisdiction and purpose. Process personal data only where you have a lawful basis (for example legitimate interest under <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener">GDPR</a>), keep messages relevant, and honour opt-out requests.' },
 ];
@@ -163,7 +163,7 @@ ${closingCta({
         '@type': 'FAQPage',
         mainEntity: [
           { '@type': 'Question', name: 'Do I need Sales Navigator to use Connectora?', acceptedAnswer: { '@type': 'Answer', text: 'Only for Sales Navigator searches. File uploads and campaigns work with standard LinkedIn accounts.' } },
-          { '@type': 'Question', name: 'Does Connectora find email addresses?', acceptedAnswer: { '@type': 'Answer', text: 'No. Connectora is focused on LinkedIn outreach. If your file includes an email column, it is kept with the lead.' } },
+          { '@type': 'Question', name: 'Does Connectora find email addresses?', acceptedAnswer: { '@type': 'Answer', text: 'No. Connectora does not look up email addresses. If your file includes an email column, it is kept with the lead.' } },
           { '@type': 'Question', name: 'How does Connectora prevent contacting the same person twice?', acceptedAnswer: { '@type': 'Answer', text: 'Connectora records every person your workspace has contacted. A lead already contacted by another campaign is skipped, and repeat profiles within a file are flagged as duplicates before launch.' } },
         ],
       },

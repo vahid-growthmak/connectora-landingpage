@@ -9,7 +9,7 @@ const ROWS = [
   ['Free trial', '7 days, starts with a short demo', '14 days, no card', '7 days', '14 days', '7 days, no card'],
   ['Runs in the cloud', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes'],
   ['Shared inbox', 'Yes, Unibox (included)', 'Yes, Unified Inbox', 'Yes, Global Inbox', 'Paid add-on (LinkedIn Inbox)', 'Yes, from Pro plan'],
-  ['Email outreach', 'No, LinkedIn-focused', 'Through Instantly and Smartlead integrations', 'Yes, email follow-ups', 'Yes, on Business plan', 'Yes'],
+  ['Email outreach', 'Yes, separate email campaigns with warm-up', 'Through Instantly and Smartlead integrations', 'Yes, email follow-ups', 'Yes, on Business plan', 'Yes'],
   ['CRM and webhooks', 'Signed webhooks (Zapier, Make, any CRM)', 'API, webhooks, HubSpot, Clay and more', 'Integrations', 'CRM sync; Zapier, Make and n8n from Advanced', 'Webhook, Zapier and HubSpot from Pro'],
   ['Notable limits or extras', 'Default 20 invites per account per day; AI drafts with human approval; white-label on Agency plan (11 to 50 accounts)', 'Agency plan: 25 senders for $999 per month; white-label', 'Dedicated country-based IP; auto warm-up', 'Pro: 300 invites per month; Advanced and Business: 800 per month', 'Basic: 20 connection requests per day; Pro: up to 75'],
 ];
@@ -68,7 +68,7 @@ const faqs = [
   { q: 'Is Connectora cheaper than HeyReach?', a: 'Yes, for most team sizes. At list monthly prices, 10 accounts cost $210 a month on Connectora and $790 on HeyReach\'s Growth plan; 25 accounts cost $450 and $999 on HeyReach\'s Agency plan. Above roughly 200 accounts, HeyReach\'s $2,999 Unlimited plan can work out cheaper. <a href="/pricing">See pricing</a>.' },
   { q: 'Which LinkedIn automation tool is the safest?', a: "No tool can make automation risk-free, because LinkedIn's terms restrict it. Compare default limits, back-off behaviour and reply handling. Connectora defaults to 20 invitations per account per day and pauses an account as soon as LinkedIn signals a limit." },
   { q: 'Can I switch from HeyReach, Expandi, Waalaxy or Dripify to Connectora?', a: 'Yes. Upload your lead lists, import active conversations with <a href="/unibox#import-chat">Import Chat</a>, and pause the old tool before launching so nobody is messaged twice.' },
-  { q: 'Does Connectora do email outreach like the others?', a: 'No. Connectora focuses on LinkedIn. If you need LinkedIn and email in one sequence today, Expandi, Waalaxy (Business), Dripify or HeyReach with an email integration may suit you better.' },
+  { q: 'Does Connectora do email outreach like the others?', a: 'Yes. Connectora runs email campaigns from your connected email accounts, with warm-up and daily sending limits per account. Email campaigns run separately from LinkedIn campaigns. If you need LinkedIn and email steps in one sequence, Expandi, Waalaxy (Business), Dripify or HeyReach with an email integration may suit you better.' },
 ];
 
 export default {
@@ -103,7 +103,7 @@ ${pageHero({
 
 ${blockSection({
   id: 'side-by-side',
-  head: secHead({ kicker: 'Side by side', h2: 'How do the tools compare <span class="serif">side by side?</span>', answer: '<strong>All five tools run in the cloud and offer some form of shared inbox. They differ most in price, email support and approach to safety. Connectora and HeyReach price per LinkedIn sender account; Expandi, Waalaxy and Dripify price per seat or user. Connectora is LinkedIn-focused, while the other four also offer email outreach.</strong>' }),
+  head: secHead({ kicker: 'Side by side', h2: 'How do the tools compare <span class="serif">side by side?</span>', answer: '<strong>All five tools run in the cloud and offer some form of shared inbox. They differ most in price, email support and approach to safety. Connectora and HeyReach price per LinkedIn sender account; Expandi, Waalaxy and Dripify price per seat or user. All five offer email outreach in some form: Connectora runs email as separate campaigns with warm-up, while Expandi, Waalaxy and Dripify can mix email steps into LinkedIn sequences.</strong>' }),
   content: compareTable(),
 })}
 
@@ -223,7 +223,7 @@ ${closingCta({
           { '@type': 'Question', name: 'Is Connectora cheaper than HeyReach?', acceptedAnswer: { '@type': 'Answer', text: "Yes, for most team sizes. At list monthly prices, 10 accounts cost $210 a month on Connectora and $790 on HeyReach's Growth plan; 25 accounts cost $450 and $999 on HeyReach's Agency plan. Above roughly 200 accounts, HeyReach's $2,999 Unlimited plan can work out cheaper." } },
           { '@type': 'Question', name: 'Which LinkedIn automation tool is the safest?', acceptedAnswer: { '@type': 'Answer', text: "No tool can make automation risk-free, because LinkedIn's terms restrict it. Compare default limits, back-off behaviour and reply handling. Connectora defaults to 20 invitations per account per day and pauses an account as soon as LinkedIn signals a limit." } },
           { '@type': 'Question', name: 'Can I switch from HeyReach, Expandi, Waalaxy or Dripify to Connectora?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Upload your lead lists, import active conversations with Import Chat, and pause the old tool before launching so nobody is messaged twice.' } },
-          { '@type': 'Question', name: 'Does Connectora do email outreach?', acceptedAnswer: { '@type': 'Answer', text: 'No. Connectora focuses on LinkedIn outreach.' } },
+          { '@type': 'Question', name: 'Does Connectora do email outreach?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Connectora runs email campaigns from your connected email accounts, with warm-up and daily sending limits per account. Email campaigns run separately from LinkedIn campaigns.' } },
         ],
       },
       {

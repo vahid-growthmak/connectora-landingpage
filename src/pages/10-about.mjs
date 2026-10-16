@@ -154,7 +154,9 @@ ${stickySection({
         '@type': 'Person',
         '@id': '{{SITE_URL}}/#owner',
         name: config.directContact.name,
-        jobTitle: 'Connectora owner',
+        jobTitle: 'Connectora owner, Head of Operations, Growthmak',
+        url: config.author.linkedin,
+        sameAs: [config.author.linkedin],
         worksFor: { '@id': '{{SITE_URL}}/#growthmak' },
       },
       {

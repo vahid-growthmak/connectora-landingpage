@@ -50,7 +50,7 @@ const GROUPS = [
     more: ['/linkedin-lead-sourcing', 'LinkedIn lead sourcing'],
     items: [
       { q: 'Where do leads come from?', a: 'From a CSV, TSV or Excel file of LinkedIn profile URLs (up to 25 MB and 50,000 rows), a LinkedIn Sales Navigator search (up to 2,500 people), or the people who reacted to and commented on a LinkedIn post. Every profile is validated and de-duplicated before sending.' },
-      { q: 'Does Connectora send InMail or email?', a: 'No. Connectora works with LinkedIn connection requests and messages to connections. It does not send InMail or email campaigns.' },
+      { q: 'Does Connectora send InMail or email?', a: 'Connectora does not send InMail. On LinkedIn it works with connection requests and messages to connections. For email, connectora runs email campaigns from your connected email accounts, with warm-up and daily sending limits per account. Email campaigns run separately from LinkedIn campaigns.' },
     ],
   },
   {
